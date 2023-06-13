@@ -43,8 +43,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [https://github.com/Jo-cloud85/dark-theme-interactive-form.git](https://github.com/Jo-cloud85/dark-theme-interactive-form.git)
-- Live Site URL: [https://jo-cloud85.github.io/dark-theme-interactive-form/](https://jo-cloud85.github.io/dark-theme-interactive-form/)
+- Solution URL: [https://github.com/Jo-cloud85/interactive-card-form-dark_theme.git](https://github.com/Jo-cloud85/interactive-card-form-dark_theme.git)
+- Live Site URL: [https://jo-cloud85.github.io/interactive-card-form-dark_theme/](https://jo-cloud85.github.io/interactive-card-form-dark_theme/)
 
 ## My process
 
