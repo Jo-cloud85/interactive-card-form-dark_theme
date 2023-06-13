@@ -1,0 +1,205 @@
+html {
+    --r447: calc((447 / var(--base) * 1rem));
+    --r286: calc((286 / var(--base) * 1rem));
+    --r270: calc((270 / var(--base) * 1rem));
+    --r245: calc((245 / var(--base) * 1rem));
+    --r157: calc((157 / var(--base) * 1rem)); 
+    --base: 16;
+}
+
+/* ----------- Card img container ----------- */
+.img-container {
+    display: grid;
+    align-content: center;
+    justify-content: end;
+    color: var(--silver);
+}
+
+.card-front,
+.card-back {
+    width: var(--r447);
+    height: var(--r245);
+    background: linear-gradient(45deg, hsl(0, 0%, 17%), hsl(0, 0%, 0%));
+    box-shadow: 1px 1px var(--r10) var(--yellow);
+    border-style: groove;
+    border-color: var(--coal-100);
+    border-radius: var(--r12);
+    margin-top: var(--r40);
+}
+
+.card-front {
+    padding: 1.5rem;
+}
+
+.card-back {
+    margin-left: var(--r80);
+}
+
+/* ----------- Front of card ----------- */
+.card-img-details {
+    display: flex;
+    flex-direction: column;
+    place-content: center;
+    gap: 5px;
+}
+
+.company-logo {
+    object-fit: contain;
+    width: 4rem;
+    filter: invert(60%);
+    align-self: flex-end;
+}
+
+.chip {
+    filter: invert(40%);
+    width: 3rem;
+}
+
+.card-d-number {
+    font-size: 1.5rem;
+    letter-spacing: 0.8px;
+    margin-top: 1rem;
+}
+
+.card-d {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items:flex-end;
+}
+
+.card-d-exp-text {
+    font-size: 0.5rem;
+    letter-spacing: 0.5px;
+}
+
+.card-d-exp-mmyy,
+.card-d-name {
+    font-size: var(--r14);
+    letter-spacing: 2px;
+}
+
+.card-d-name {
+    padding-top: 2px;
+}
+
+.bank-logo {
+    filter: invert(70%) grayscale(100%);
+    width: 4rem;
+    justify-self: end;
+}
+
+/* ----------- Back of card ----------- */
+.card-back {
+    display: grid;
+    grid-template-rows: 6rem 1fr;
+    place-items: center;
+}
+
+.strip {
+    width: 100%;
+    height: 3rem;
+    background: linear-gradient(45deg, hsl(0, 0%, 25%), hsl(0, 0%, 17%));
+}
+
+.card-d-cvc {
+    width: var(--r360);
+    height: var(--r40);
+    border-radius: 5px;
+    background-color: var(--coal-100);
+    align-self: baseline;
+    padding: 10px;
+    text-align: end;
+    font-size: var(--r14);
+    letter-spacing: 2px;
+}
+
+@media screen and (max-width: 599px) {
+    /* ----------- Card img container ----------- */
+    .img-container {
+        display: grid;
+        place-items: center;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+    
+    .card-front,
+    .card-back {
+        /* position: absolute; */
+        width: var(--r286);
+        height: var(--r157);
+        border-radius: 6px;
+    }
+    
+    .card-front {
+        position: absolute;
+        padding: 1rem;
+        z-index: 1;
+        top: 30%;
+        left: 0;
+    }
+    
+    .card-back {
+        position: relative;
+        margin-left: 0;
+        bottom: 30%;
+        left: 0;
+    }
+
+    /* ----------- Front of card -----------*/
+    .card-img-details {
+        gap: 2.5px;
+    }
+
+    .company-logo {
+        width: 2.5rem;
+    }
+
+    .chip {
+        width: 2rem;
+    }
+
+    .card-d-number {
+        font-size: 1rem;
+        letter-spacing: 0.8px;
+        margin-top: 0.6rem;
+    }
+
+    .card-d-exp-text {
+        font-size: 0.3rem;
+        letter-spacing: 0.4px;
+    }
+
+    .card-d-exp-mmyy,
+    .card-d-name {
+        font-size: var(--r10);
+        letter-spacing: 1.5px;
+    }
+
+    .card-d-name {
+        padding: 2px 0;
+    }
+
+    .bank-logo {
+        width: 2.5rem;
+    }
+
+    /* ----------- Back of card ----------- */
+    .card-back {
+        grid-template-rows: 4rem 1fr;
+    }
+
+    .strip {
+        width: 100%;
+        height: 2rem;
+    }
+
+    .card-d-cvc {
+        width: var(--r245);
+        height: var(--r30);
+        border-radius: 3px;
+        padding: 0.5rem;
+        font-size: var(--r10);
+        letter-spacing: 1px;
+    }
+}

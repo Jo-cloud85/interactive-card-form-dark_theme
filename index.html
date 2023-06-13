@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- CSS Stylesheet -->
+  <link rel=stylesheet href="./css/card_styles.css">
+  <link rel=stylesheet href="./css/styles.css">
+</head>
+
+<body>
+  <main>
+
+    <div class="img-container">
+      <div class="card-front">
+        <div class="card-img-details">
+          <img class="company-logo" src="./assets/images/card-logo.svg" alt="company-logo">
+          <img class="chip" src="./assets/images/bank-logo/chip.png" alt="chip-img">
+          <p class="card-d-number">0000 0000 0000 0000</p>
+          <div class="card-d">
+            <div class="card-d-details">
+              <p class="card-d-exp-text">valid thru</p>
+              <p class="card-d-exp-mmyy">
+                <span class="card-d-exp-mm">00/</span>
+                <span class="card-d-exp-yy">00</span>
+              </p>
+              <p class="card-d-name">Jane Appleseed</p>
+            </div>
+            <img class="bank-logo" src="./assets/images/bank-logo/mastercard.svg" alt="bank-logo">
+          </div>
+        </div>
+      </div>
+
+      <div class="card-back">
+        <div class="strip"></div>
+        <div class="card-d-cvc">000</div>
+      </div>
+    </div>
+
+    <div class="input-container">
+
+      <div class="input-section">
+        <div class="tagline-section">
+          <span class="tagline-1">Unlock</span>
+          <span class="tagline-2">... In Just One Step Away</span>
+        </div>
+
+        <form class="card-details">
+          <div class="cardholder-name-section">
+            <label for="cardholder-name">Cardholder Name</label>
+            <input type="text" name="cardholder-name" id="cardholder-name" placeholder="e.g. Jane Appleseed" required>
+            <p class="err" id="name-err"></p>
+          </div>
+
+          <div class="card-number-section">
+            <label for="card-number">Card Number</label>
+            <input type="text" name="card-number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" required>
+            <p class="err" id="card-number-err"></p>
+          </div>
+
+          <div class="other-details-section">
+            <div class="exp">
+              <label>Exp. date (mm/yy)</label>
+              <div class="exp-mmyy">
+                <input type="number" name="exp-month" id="exp-month" min="1" max="12" placeholder="MM" required>
+                <input type="number" name="exp-year" id="exp-year" min="23" max="99" placeholder="YY" required>
+              </div>
+              <p class="err" id="exp-err"></p>
+            </div>
+
+            <div class="cvc">
+              <label for="cvc">Cvc</label>
+              <input type="number" name="cvc" id="cvc" placeholder="e.g. 123" required>
+              <p class="err" id="cvc-err"></p>
+            </div>
+          </div>
+
+          <button type="button" class="confirm-btn">Confirm</button>
+        </form>
+      </div>
+
+      <div class="modal-container" id="modal-id">
+        <div class="modal-content">
+          <div id="tick-icon">
+            <img src="assets/images/icon-complete.svg" alt="icon-complete">
+          </div>
+          <p id="thank-you">THANK YOU!</p>
+          <p id="other-text">We've added your card details</p>
+          <button type="button" id="continue-btn">Continue</button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="./js/script.js"></script>
+</body>
+
+</html>

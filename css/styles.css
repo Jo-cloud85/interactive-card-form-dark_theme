@@ -1,0 +1,322 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: hsl(0, 0%, 5%);
+    text-transform: uppercase;
+
+    --white: hsl(0, 0%, 100%);
+    --yellow:hsla(39, 100%, 67%, 0.2);
+    --orange: hsl(39, 58%, 50%);
+    --silver: hsl(0, 0%, 75%);
+    --coal-100: hsl(0, 0%, 25%);
+    --coal-200: hsl(0, 0%, 17%);
+    --coal-300: hsl(0, 0%, 9%);
+    --black: hsl(0, 0%, 10%);
+}
+
+html {
+    --r550: calc((550 / var(--base) * 1rem));
+    --r360: calc((360 / var(--base) * 1rem));
+    --r130: calc((130 / var(--base) * 1rem));
+    --r120: calc((120 / var(--base) * 1rem));
+    --r110: calc((110 / var(--base) * 1rem));
+    --r100: calc((100 / var(--base) * 1rem));
+    --r80: calc((80 / var(--base) * 1rem));
+    --r60: calc((60 / var(--base) * 1rem));
+    --r50: calc((50 / var(--base) * 1rem));
+    --r40: calc((40 / var(--base) * 1rem));
+    --r30: calc((30 / var(--base) * 1rem));
+    --r20: calc((20 / var(--base) * 1rem));
+    --r18: calc((18 / var(--base) * 1rem));
+    --r14: calc((14 / var(--base) * 1rem));
+    --r12: calc((12 / var(--base) * 1rem));
+    --r10: calc((10 / var(--base) * 1rem));
+    --base: 16;
+}
+
+/* ---------- Overall structure ---------- */
+body,
+main {
+    display: grid;
+    place-content: center;
+}
+
+body {
+    background: url("../assets/images/bg-main-desktop-dark2.png");
+    background-size: 30% 100%;
+    background-repeat: no-repeat; 
+    height: 100svh;
+}
+
+main {
+    grid-template-columns: 1fr 1fr;
+    column-gap: var(--r80);
+    width: 90vw;
+}
+
+/* ---------- Input container ---------- */
+.input-container {
+    display: grid;
+    align-content: center;
+    color: var(--silver);
+} 
+
+.tagline-section {
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2rem;
+    color: var(--white);
+    text-transform: uppercase;
+    padding-bottom: 2.5rem;
+}
+
+.tagline-1 {
+    font-size: var(--r120);
+    font-weight: 500;
+    letter-spacing: 0.4rem;
+    line-height: var(--r100);
+}
+
+.tagline-2 {
+    font-size: var(--r20);
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+}
+
+/* card form details section */
+.card-details {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    padding-top: var(--r20);
+}
+
+.cardholder-name-section,
+.card-number-section,
+.other-details-section {
+    padding-bottom: 1rem;
+}
+
+.other-details-section,
+.exp-mmyy {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.other-details-section {
+    column-gap: var(--r20);
+}
+
+.exp-mmyy {
+    column-gap: var(--r10);
+}
+
+label,
+.err-msg {
+    font-size: var(--r12);
+    line-height: 1rem;
+    letter-spacing: 2px;
+}
+
+label {
+    text-transform: uppercase;
+}
+
+.err-msg {
+    color: var(--orange);
+}
+
+.border-orange {
+    border: 1px solid var(--orange);
+}
+
+input,
+button {
+    font-family: inherit;
+    font-size: var(--r18);
+    letter-spacing: 2px;
+    background-color: transparent;
+    margin: var(--r10) 0;
+    height: var(--r50);
+    border-radius: 0.5rem;
+    transition: all 0.3s ease-in;
+    text-transform: uppercase;
+}
+
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--silver);
+    padding: var(--r10) 1rem;
+    opacity: 0.5;
+    color: var(--white);
+    caret-color: var(--white);
+}
+
+input:is(:hover, :focus) {
+    background-color: var(--coal-100);
+}
+
+.other-details-section input::-webkit-outer-spin-button, /*To hide the up & down button of the num input*/
+.other-details-section input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+button {
+    background-color: var(--coal-300);
+    letter-spacing: 2px;
+    border: 1px solid var(--silver);
+    color: var(--silver);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--orange);
+    color: var(--white);
+    border: none;
+    box-shadow: 2px 2px 10px var(--yellow), -2px -2px 10px var(--yellow);
+}
+
+/* ----------- Modal structure ----------- */
+.modal-container {
+    display: none;
+    text-align: center;
+    margin-left: 4rem;
+    width: 380px;
+    height: 290px;
+    background-color: var(--coal-300);
+    color: var(--white);
+    border-radius: 10px;
+    padding: 2.5rem;
+}
+
+#tick-icon img {
+    width: 80px;
+    height: 80px;
+    filter: invert(100%) grayscale(100%);
+}
+
+#thank-you {
+    font-size: var(--r30);
+    margin-top: var(--r30);
+}
+
+#other-text {
+    font-size: var(--r18);
+    margin-top: var(--r14);
+}
+
+#continue-btn {
+    background-color: transparent;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+#continue-btn:hover {
+    border: 2px outset var(--yellow);
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+@media screen and (max-width: 599px) {
+    /* ---------- Overall structure ---------- */
+    body {
+        background: url("../assets/images/bg-main-mobile-dark.png");
+        background-size: 100% 30%;
+        background-repeat: no-repeat;
+        width: 100vw;
+        height: auto;
+    }
+
+    main {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr;
+        row-gap: var(--r20);
+        height: 100%;
+        place-items: center;
+    }
+
+    /* ---------- Input container ---------- */
+    .input-container {
+        align-items: center; 
+    } 
+
+    .tagline-section {
+        align-items: center;
+        gap: 1rem;
+        color: var(--white);
+        text-transform: uppercase;
+        padding: 1.5rem 0;
+    }
+    
+    .tagline-1 {
+        font-size: var(--r50);
+        letter-spacing: 0.3rem;
+        line-height: var(--r60);
+    }
+    
+    .tagline-2 {
+        font-size: var(--r12);
+        letter-spacing: 0.15rem;
+    }
+
+    /* card form details section */
+    .card-details {
+        width: 100%;
+        padding-left: 0;
+        padding: var(--r20) 0;
+    }
+
+    .other-details-section {
+        column-gap: var(--r10);
+    }
+
+    input,
+    button {
+        font-size: var(--r18);
+        margin-top: var(--r10);
+    }
+
+    button {
+        letter-spacing: 1.5px;
+    }
+
+    /* ----------- Modal structure ----------- */
+    .modal-container {
+        width: 70vw;
+        height: 12.5rem;
+        margin-left: 0;
+        padding: 2rem;
+        z-index: 1;
+    }
+
+    #tick-icon img {
+        width: 3.75rem;
+        height: 3.75rem;
+    }
+
+    #thank-you {
+        font-size: var(--r20);
+        margin-top: var(--r20);
+    }
+
+    #other-text {
+        font-size: var(--r14);
+        margin-top: var(--r10);
+    }
+
+    #continue-btn {
+        height: 2.5rem;
+        margin-top: 2rem;
+    }
+}
